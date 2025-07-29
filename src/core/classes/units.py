@@ -1,0 +1,32 @@
+from enum import Enum
+from abc import ABC, abstractmethod
+
+class Unit(ABC):
+
+    def __init__(self, location) -> None:
+        self.location = location
+
+class Army(Unit):
+
+    def __init__(self, location) -> None:
+        super().__init__(location)
+
+    def __str__(self) -> str:
+        return "Army"
+
+class Fleet(Unit):
+    def __init__(self, location) -> None:
+        super().__init__(location)
+
+    def __str__(self) -> str:
+        return "Fleet"
+
+# class Plane(Unit):
+#     def move(self):
+#         print("MOVE !!!")
+
+#     def __init__(self, id: int = -1, power = None) -> None:
+#         super().__init__(id, power)
+
+#     def __str__(self) -> str:
+#         return "Plane"

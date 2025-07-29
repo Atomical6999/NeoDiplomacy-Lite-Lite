@@ -1,0 +1,1539 @@
+{
+    "name": "Standard",
+    "description": "The standard Diplomacy map for NeoDiplomacy.",
+    "version": "1.0",
+    "author": "Atomical",
+    "startingYear": 1901,
+    "startingSeason": "Spring",
+    "seasons": [
+        "Spring",
+        "Fall"
+    ],
+    "powers": [
+        {
+            "name": "Austria-Hungary",
+            "adjective": "Austrian",
+            "color": "#ae4a39",
+            "homeTerritory": [
+                "Bohemia",
+                "Budapest",
+                "Galicia",
+                "Trieste",
+                "Tyrol",
+                "Vienna"
+            ],
+            "supplyCenters": [
+                "Budapest",
+                "Trieste",
+                "Vienna"
+            ],
+            "units": [
+                {
+                    "type": "Army",
+                    "location": "Budapest"
+                },
+                {
+                    "type": "Army",
+                    "location": "Vienna"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Trieste"
+                }
+            ]
+        },
+        {
+            "name": "England",
+            "adjective": "English",
+            "color": "#7670b3",
+            "homeTerritory": [
+                "Clyde",
+                "Wales",
+                "Yorkshire",
+                "London",
+                "Liverpool",
+                "Edinburgh"
+            ],
+            "supplyCenters": [
+                "London",
+                "Liverpool",
+                "Edinburgh"
+            ],
+            "units": [
+                {
+                    "type": "Fleet",
+                    "location": "London"
+                },
+                {
+                    "type": "Army",
+                    "location": "Liverpool"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Edinburgh"
+                }
+            ]
+        },
+        {
+            "name": "France",
+            "adjective": "French",
+            "color": "#8cc6ec",
+            "homeTerritory": [
+                "Burgundy",
+                "Gascony",
+                "Paris",
+                "Picardy",
+                "Marseilles",
+                "Brest"
+            ],
+            "supplyCenters": [
+                "Paris",
+                "Marseilles",
+                "Brest"
+            ],
+            "units": [
+                {
+                    "type": "Army",
+                    "location": "Paris"
+                },
+                {
+                    "type": "Army",
+                    "location": "Marseilles"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Brest"
+                }
+            ]
+        },
+        {
+            "name": "Germany",
+            "adjective": "German",
+            "color": "#6d6e71",
+            "homeTerritory": [
+                "Berlin",
+                "Kiel",
+                "Munich",
+                "Ruhr",
+                "Silesia",
+                "Prussia"
+            ],
+            "supplyCenters": [
+                "Berlin",
+                "Kiel",
+                "Munich"
+            ],
+            "units": [
+                {
+                    "type": "Army",
+                    "location": "Berlin"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Kiel"
+                },
+                {
+                    "type": "Army",
+                    "location": "Munich"
+                }
+            ]
+        },
+        {
+            "name": "Italy",
+            "adjective": "Italian",
+            "color": "#6c9166",
+            "homeTerritory": [
+                "Apulia",
+                "Naples",
+                "Rome",
+                "Venice",
+                "Piedmont",
+                "Tuscany"
+            ],
+            "supplyCenters": [
+                "Rome",
+                "Venice",
+                "Naples"
+            ],
+            "units": [
+                {
+                    "type": "Army",
+                    "location": "Rome"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Naples"
+                },
+                {
+                    "type": "Army",
+                    "location": "Venice"
+                }
+            ]
+        },
+        {
+            "name": "Russia",
+            "adjective": "Russian",
+            "color": "#f9cb9c",
+            "homeTerritory": [
+                "Moscow",
+                "STP",
+                "Sevastopol",
+                "Warsaw",
+                "Livonia",
+                "Ukraine",
+                "Finland"
+            ],
+            "supplyCenters": [
+                "Moscow",
+                "STP",
+                "Sevastopol",
+                "Warsaw"
+            ],
+            "units": [
+                {
+                    "type": "Army",
+                    "location": "Moscow"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "STP"
+                },
+                {
+                    "type": "Army",
+                    "location": "Warsaw"
+                },
+                {
+                    "type": "Fleet",
+                    "location": "Sevastopol"
+                }
+            ]
+        },
+        {
+            "name": "Turkey",
+            "adjective": "Turkish",
+            "color": "#fff685",
+            "homeTerritory": [
+                "Ankara",
+                "Constantinople",
+                "Smyrna",
+                "Armenia",
+                "Syria"
+            ],
+            "supplyCenters": [
+                "Ankara",
+                "Constantinople",
+                "Smyrna"
+            ],
+            "units": [
+                {
+                    "type": "Fleet",
+                    "location": "Ankara"
+                },
+                {
+                    "type": "Army",
+                    "location": "Constantinople"
+                },
+                {
+                    "type": "Army",
+                    "location": "Smyrna"
+                }
+            ]
+        },
+        {
+            "name": "Neutral",
+            "adjective": "Neutral",
+            "color": "#cfe2f3",
+            "homeTerritory": [],
+            "supplyCenters": [
+                "BEL",
+                "BUL",
+                "DEN",
+                "GRE",
+                "HOL",
+                "NWY",
+                "POR",
+                "RUM",
+                "SER",
+                "SPA",
+                "SWE",
+                "TUN"
+            ],
+            "units": []
+        }
+    ],
+    "provinces": [
+        {
+            "name": "Adriatic Sea",
+            "abbreviation": "ADR",
+            "aliases": [
+                "Adriatic"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "ALB",
+                "APU",
+                "ION",
+                "TRI",
+                "VEN"
+            ]
+        },
+        {
+            "name": "Aegean Sea",
+            "abbreviation": "AEG",
+            "aliases": [
+                "Aegean"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BUL/SC",
+                "CON",
+                "EAS",
+                "GRE",
+                "ION",
+                "SMY"
+            ]
+        },
+        {
+            "name": "Albania",
+            "abbreviation": "ALB",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ADR",
+                "GRE",
+                "ION",
+                "SER",
+                "TRI"
+            ]
+        },
+        {
+            "name": "Ankara",
+            "abbreviation": "ANK",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ARM",
+                "BLA",
+                "CON",
+                "SMY"
+            ]
+        },
+        {
+            "name": "Apulia",
+            "abbreviation": "APU",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ADR",
+                "ION",
+                "NAP",
+                "ROM",
+                "VEN"
+            ]
+        },
+        {
+            "name": "Armenia",
+            "abbreviation": "ARM",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ANK",
+                "BLA",
+                "SEV",
+                "SMY",
+                "SYR"
+            ]
+        },
+        {
+            "name": "Baltic Sea",
+            "abbreviation": "BAL",
+            "aliases": [
+                "Baltic"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BER",
+                "BOT",
+                "DEN",
+                "LVN",
+                "KIE",
+                "PRU",
+                "SWE"
+            ]
+        },
+        {
+            "name": "Barents Sea",
+            "abbreviation": "BAR",
+            "aliases": [
+                "Barents"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "NWY",
+                "NWG",
+                "STP/NC"
+            ]
+        },
+        {
+            "name": "Belgium",
+            "abbreviation": "BEL",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BUR",
+                "ENG",
+                "HOL",
+                "NTH",
+                "PIC",
+                "RUH"
+            ]
+        },
+        {
+            "name": "Berlin",
+            "abbreviation": "BER",
+            "aliases": [
+                "Berl"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "KIE",
+                "MUN",
+                "PRU",
+                "SIL"
+            ]
+        },
+        {
+            "name": "Black Sea",
+            "abbreviation": "BLA",
+            "aliases": [
+                "Black",
+                "BS"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "ANK",
+                "ARM",
+                "BUL/EC",
+                "CON",
+                "RUM",
+                "SEV"
+            ]
+        },
+        {
+            "name": "Bohemia",
+            "abbreviation": "BOH",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "GAL",
+                "MUN",
+                "SIL",
+                "TYR",
+                "VIE"
+            ]
+        },
+        {
+            "name": "Gulf of Bothnia",
+            "abbreviation": "BOT",
+            "aliases": [
+                "GOB",
+                "BOTH",
+                "GulfofB",
+                "Bothnia"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BAL",
+                "FIN",
+                "LVN",
+                "STP/SC",
+                "SWE"
+            ]
+        },
+        {
+            "name": "Brest",
+            "abbreviation": "BRE",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ENG",
+                "GAS",
+                "MAO",
+                "PAR",
+                "PIC"
+            ]
+        },
+        {
+            "name": "Budapest",
+            "abbreviation": "BUD",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "GAL",
+                "RUM",
+                "SER",
+                "TRI",
+                "VIE"
+            ]
+        },
+        {
+            "name": "Bulgaria (East Coast)",
+            "abbreviation": "BUL/EC",
+            "aliases": [
+                "BUL(EC)",
+                "Bulgaria/EC",
+                "BUL/NC",
+                "BUL(NC)",
+                "Bulgaria/NC",
+                "Bulgaria (North Coast)",
+                "Bulgaria(NC)"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BLA",
+                "CON",
+                "RUM"
+            ]
+        },
+        {
+            "name": "Bulgaria (South Coast)",
+            "abbreviation": "BUL/SC",
+            "aliases": [
+                "BUL(SC)",
+                "Bulgaria(SC)"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "AEG",
+                "CON",
+                "GRE"
+            ]
+        },
+        {
+            "name": "Bulgaria",
+            "abbreviation": "BUL",
+            "aliases": [
+                "Bulg"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "AEG",
+                "BLA",
+                "CON",
+                "GRE",
+                "RUM",
+                "SER"
+            ]
+        },
+        {
+            "name": "Burgundy",
+            "abbreviation": "BUR",
+            "aliases": [
+                "Burg",
+                "Burgandy"
+            ],
+            "type": "Land",
+            "adjacencies": [
+                "BEL",
+                "GAS",
+                "RUH",
+                "MAR",
+                "MUN",
+                "PAR",
+                "PIC",
+                "SWI"
+            ]
+        },
+        {
+            "name": "Clyde",
+            "abbreviation": "CLY",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "EDI",
+                "LVP",
+                "NAO",
+                "NWG"
+            ]
+        },
+        {
+            "name": "Constantinople",
+            "abbreviation": "CON",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "AEG",
+                "BUL/EC",
+                "BUL/SC",
+                "BLA",
+                "ANK",
+                "SMY"
+            ]
+        },
+        {
+            "name": "Denmark",
+            "abbreviation": "DEN",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "HEL",
+                "KIE",
+                "NTH",
+                "SKA",
+                "SWE"
+            ]
+        },
+        {
+            "name": "Eastern Mediterranean Sea",
+            "abbreviation": "EAS",
+            "aliases": [
+                "East Mediterranean Sea",
+                "East Med",
+                "Eastern Mediterranean",
+                "Eastern Med",
+                "East",
+                "Emed",
+                "Eastern",
+                "EMS",
+                "EME",
+                "EMD",
+                "EAS+MED"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "AEG",
+                "ION",
+                "SMY",
+                "SYR"
+            ]
+        },
+        {
+            "name": "Edinburgh",
+            "abbreviation": "EDI",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "CLY",
+                "LVP",
+                "NTH",
+                "NWG",
+                "YOR"
+            ]
+        },
+        {
+            "name": "English Channel",
+            "abbreviation": "ENG",
+            "aliases": [
+                "Channel",
+                "ECH",
+                "ENG+CH"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BEL",
+                "BRE",
+                "IRI",
+                "LON",
+                "NAO",
+                "NTH",
+                "PIC",
+                "WAL"
+            ]
+        },
+        {
+            "name": "Finland",
+            "abbreviation": "FIN",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BOT",
+                "NWY",
+                "STP/SC",
+                "SWE"
+            ]
+        },
+        {
+            "name": "Galicia",
+            "abbreviation": "GAL",
+            "aliases": [
+                "Galacia"
+            ],
+            "type": "Land",
+            "adjacencies": [
+                "BOH",
+                "BUD",
+                "RUM",
+                "SIL",
+                "UKR",
+                "VIE",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Gascony",
+            "abbreviation": "GAS",
+            "aliases": [
+                "Gasc"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BUR",
+                "BRE",
+                "MAO",
+                "MAR",
+                "PAR",
+                "SPA/NC"
+            ]
+        },
+        {
+            "name": "Greece",
+            "abbreviation": "GRE",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "AEG",
+                "ALB",
+                "BUL/SC",
+                "ION",
+                "SER"
+            ]
+        },
+        {
+            "name": "Heligoland Bight",
+            "abbreviation": "HEL",
+            "aliases": [
+                "Helgoland",
+                "Heligoland",
+                "Heligoland+bight",
+                "Helg"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "DEN",
+                "HOL",
+                "KIE",
+                "NTH"
+            ]
+        },
+        {
+            "name": "Holland",
+            "abbreviation": "HOL",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BEL",
+                "HEL",
+                "KIE",
+                "NTH",
+                "RUH"
+            ]
+        },
+        {
+            "name": "Ionian Sea",
+            "abbreviation": "ION",
+            "aliases": [
+                "Ionian"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "ADR",
+                "AEG",
+                "ALB",
+                "APU",
+                "EAS",
+                "GRE",
+                "NAP",
+                "TUN",
+                "TYS"
+            ]
+        },
+        {
+            "name": "Irish Sea",
+            "abbreviation": "IRI",
+            "aliases": [
+                "Irish",
+                "IRS"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "ENG",
+                "LVP",
+                "MAO",
+                "NAO",
+                "WAL"
+            ]
+        },
+        {
+            "name": "Kiel",
+            "abbreviation": "KIE",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "BER",
+                "DEN",
+                "HEL",
+                "HOL",
+                "MUN",
+                "RUH"
+            ]
+        },
+        {
+            "name": "London",
+            "abbreviation": "LON",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ENG",
+                "NTH",
+                "YOR",
+                "WAL"
+            ]
+        },
+        {
+            "name": "Livonia",
+            "abbreviation": "LVN",
+            "aliases": [
+                "Livo",
+                "LVO",
+                "LVA",
+                "LIV",
+                "LIVON"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "BOT",
+                "MOS",
+                "PRU",
+                "STP/SC",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Liverpool",
+            "abbreviation": "LVP",
+            "aliases": [
+                "Livp",
+                "LPL"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "CLY",
+                "EDI",
+                "IRI",
+                "NAO",
+                "WAL",
+                "YOR"
+            ]
+        },
+        {
+            "name": "Gulf of Lyons",
+            "abbreviation": "LYO",
+            "aliases": [
+                "GOL",
+                "GulfOfL",
+                "Lyon",
+                "Gulf+of+Lyons",
+                "Lyons"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "MAR",
+                "PIE",
+                "SPA/SC",
+                "TUS",
+                "TYS",
+                "WES"
+            ]
+        },
+        {
+            "name": "Mid Atlantic Ocean",
+            "abbreviation": "MAO",
+            "aliases": [
+                "Mid Atlantic",
+                "midatlanticocean",
+                "MidAtlantic",
+                "MID",
+                "MAT"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BRE",
+                "ENG",
+                "GAS",
+                "IRI",
+                "NAF",
+                "NAO",
+                "POR",
+                "SPA/NC",
+                "SPA/SC",
+                "WES"
+            ]
+        },
+        {
+            "name": "Marseilles",
+            "abbreviation": "MAR",
+            "aliases": [
+                "Mars"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BUR",
+                "GAS",
+                "LYO",
+                "PIE",
+                "SPA/SC"
+            ]
+        },
+        {
+            "name": "Moscow",
+            "abbreviation": "MOS",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "LVN",
+                "SEV",
+                "STP",
+                "UKR",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Munich",
+            "abbreviation": "MUN",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "BER",
+                "BOH",
+                "BUR",
+                "KIE",
+                "RUH",
+                "SIL",
+                "TYR"
+            ]
+        },
+        {
+            "name": "North Africa",
+            "abbreviation": "NAF",
+            "aliases": [
+                "NORA",
+                "N+AFR"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "MAO",
+                "TUN",
+                "WES"
+            ]
+        },
+        {
+            "name": "North Atlantic Ocean",
+            "abbreviation": "NAO",
+            "aliases": [
+                "North Atlantic",
+                "NAT",
+                "NA"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "CLY",
+                "IRI",
+                "LVP",
+                "MAO",
+                "NWG"
+            ]
+        },
+        {
+            "name": "Naples",
+            "abbreviation": "NAP",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "APU",
+                "ION",
+                "ROM",
+                "TYS"
+            ]
+        },
+        {
+            "name": "Norway",
+            "abbreviation": "NWY",
+            "aliases": [
+                "NOR",
+                "NORW"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAR",
+                "FIN",
+                "NTH",
+                "NWG",
+                "SKA",
+                "STP/NC",
+                "SWE"
+            ]
+        },
+        {
+            "name": "North Sea",
+            "abbreviation": "NTH",
+            "aliases": [
+                "Norsea",
+                "NTS",
+                "NS"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BEL",
+                "DEN",
+                "EDI",
+                "ENG",
+                "LON",
+                "HEL",
+                "HOL",
+                "NWY",
+                "NWG",
+                "SKA",
+                "YOR"
+            ]
+        },
+        {
+            "name": "Norwegian Sea",
+            "abbreviation": "NWG",
+            "aliases": [
+                "Norwegian",
+                "NORWSEA",
+                "NRG",
+                "NORG"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "BAR",
+                "CLY",
+                "EDI",
+                "NAO",
+                "NWY",
+                "NTH"
+            ]
+        },
+        {
+            "name": "Paris",
+            "abbreviation": "PAR",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "BUR",
+                "BRE",
+                "GAS",
+                "PIC"
+            ]
+        },
+        {
+            "name": "Picardy",
+            "abbreviation": "PIC",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BEL",
+                "BRE",
+                "BUR",
+                "ENG",
+                "PAR"
+            ]
+        },
+        {
+            "name": "Piedmont",
+            "abbreviation": "PIE",
+            "aliases": [
+                "PID"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "LYO",
+                "MAR",
+                "TUS",
+                "TYR",
+                "VEN",
+                "SWI"
+            ]
+        },
+        {
+            "name": "Portugal",
+            "abbreviation": "POR",
+            "aliases": [
+                "Port"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "MAO",
+                "SPA/NC",
+                "SPA/SC"
+            ]
+        },
+        {
+            "name": "Prussia",
+            "abbreviation": "PRU",
+            "aliases": [
+                "Prus"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "BER",
+                "LVN",
+                "SIL",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Rome",
+            "abbreviation": "ROM",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "APU",
+                "NAP",
+                "TUS",
+                "TYS",
+                "VEN"
+            ]
+        },
+        {
+            "name": "Ruhr",
+            "abbreviation": "RUH",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "BEL",
+                "BUR",
+                "HOL",
+                "KIE",
+                "MUN"
+            ]
+        },
+        {
+            "name": "Rumania",
+            "abbreviation": "RUM",
+            "aliases": [
+                "Romania"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BLA",
+                "BUD",
+                "BUL/EC",
+                "GAL",
+                "SER",
+                "SEV",
+                "UKR"
+            ]
+        },
+        {
+            "name": "Serbia",
+            "abbreviation": "SER",
+            "aliases": [
+                "Serb"
+            ],
+            "type": "Land",
+            "adjacencies": [
+                "ALB",
+                "BUD",
+                "BUL",
+                "GRE",
+                "RUM",
+                "TRI"
+            ]
+        },
+        {
+            "name": "Sevastopol",
+            "abbreviation": "SEV",
+            "aliases": [
+                "Sevastapol",
+                "Sevast",
+                "SEVA"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "ARM",
+                "BLA",
+                "MOS",
+                "RUM",
+                "UKR"
+            ]
+        },
+        {
+            "name": "Silesia",
+            "abbreviation": "SIL",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "BER",
+                "BOH",
+                "GAL",
+                "MUN",
+                "PRU",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Skagerrak",
+            "abbreviation": "SKA",
+            "aliases": [
+                "Skagerrak",
+                "SKAG"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "DEN",
+                "NWY",
+                "NTH",
+                "SWE"
+            ]
+        },
+        {
+            "name": "Smyrna",
+            "abbreviation": "SMY",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "AEG",
+                "ANK",
+                "ARM",
+                "CON",
+                "EAS",
+                "SYR"
+            ]
+        },
+        {
+            "name": "Spain (North Coast)",
+            "abbreviation": "SPA/NC",
+            "aliases": [
+                "SPA(NC)",
+                "Spain(NC)",
+                "Spain (North Coast)",
+                "SPN/NC",
+                "SPN(NC)",
+                "SPA+(NORTH+COAST)"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "GAS",
+                "MAO",
+                "POR"
+            ]
+        },
+        {
+            "name": "Spain (South Coast)",
+            "abbreviation": "SPA/SC",
+            "aliases": [
+                "SPA(SC)",
+                "Spain(SC)",
+                "Spain (South Coast)",
+                "SPN/SC",
+                "SPN(SC)",
+                "SPA+(SOUTH+COAST)",
+                "SPA/WC"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "LYO",
+                "MAO",
+                "MAR",
+                "POR",
+                "WES"
+            ]
+        },
+        {
+            "name": "Spain",
+            "abbreviation": "SPA",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "GAS",
+                "LYO",
+                "MAO",
+                "MAR",
+                "POR",
+                "WES"
+            ]
+        },
+        {
+            "name": "St. Petersburg (North Coast)",
+            "abbreviation": "STP/NC",
+            "aliases": [
+                "STP(NC)",
+                "StPetersburg(NC)",
+                "StPetersburg (North Coast)",
+                "STP+NC",
+                "StPete(NC)",
+                "StPete/NC"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAR",
+                "NWY"
+            ]
+        },
+        {
+            "name": "St. Petersburg (South Coast)",
+            "abbreviation": "STP/SC",
+            "aliases": [
+                "STP(SC)",
+                "StPetersburg(SC)",
+                "StPetersburg (South Coast)",
+                "STP+SC",
+                "StPete(SC)",
+                "StPete/SC"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BOT",
+                "FIN",
+                "LVN"
+            ]
+        },
+        {
+            "name": "St. Petersburg",
+            "abbreviation": "STP",
+            "aliases": [
+                "Stpete",
+                "St.+Petersburg",
+                "St.Petersburg"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "BAR",
+                "BOT",
+                "FIN",
+                "LVN",
+                "MOS",
+                "NWY"
+            ]
+        },
+        {
+            "name": "Sweden",
+            "abbreviation": "SWE",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "BAL",
+                "BOT",
+                "DEN",
+                "FIN",
+                "NWY",
+                "SKA"
+            ]
+        },
+        {
+            "name": "Syria",
+            "abbreviation": "SYR",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ARM",
+                "EAS",
+                "SMY"
+            ]
+        },
+        {
+            "name": "Trieste",
+            "abbreviation": "TRI",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ADR",
+                "ALB",
+                "BUD",
+                "SER",
+                "TYR",
+                "VEN",
+                "VIE"
+            ]
+        },
+        {
+            "name": "Tunis",
+            "abbreviation": "TUN",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ION",
+                "NAF",
+                "TYS",
+                "WES"
+            ]
+        },
+        {
+            "name": "Tuscany",
+            "abbreviation": "TUS",
+            "aliases": [
+                "Tusc"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "LYO",
+                "PIE",
+                "ROM",
+                "TYS",
+                "VEN"
+            ]
+        },
+        {
+            "name": "Tyrolia",
+            "abbreviation": "TYR",
+            "aliases": [
+                "TYL",
+                "TRL",
+                "TYO",
+                "Tyrol"
+            ],
+            "type": "Land",
+            "adjacencies": [
+                "BOH",
+                "MUN",
+                "PIE",
+                "TRI",
+                "VEN",
+                "VIE"
+            ]
+        },
+        {
+            "name": "Tyrrhenian Sea",
+            "abbreviation": "TYS",
+            "aliases": [
+                "Tyrrhenian",
+                "TYRR",
+                "TYN",
+                "TYH",
+                "TYRHH"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "ION",
+                "LYO",
+                "ROM",
+                "NAP",
+                "TUN",
+                "TUS",
+                "WES"
+            ]
+        },
+        {
+            "name": "Ukraine",
+            "abbreviation": "UKR",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "GAL",
+                "MOS",
+                "RUM",
+                "SEV",
+                "WAR"
+            ]
+        },
+        {
+            "name": "Venice",
+            "abbreviation": "VEN",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ADR",
+                "APU",
+                "PIE",
+                "ROM",
+                "TRI",
+                "TUS",
+                "TYR"
+            ]
+        },
+        {
+            "name": "Vienna",
+            "abbreviation": "VIE",
+            "aliases": [
+                "Vien"
+            ],
+            "type": "Land",
+            "adjacencies": [
+                "BOH",
+                "BUD",
+                "GAL",
+                "TRI",
+                "TYR"
+            ]
+        },
+        {
+            "name": "Wales",
+            "abbreviation": "WAL",
+            "aliases": [],
+            "type": "Coast",
+            "adjacencies": [
+                "ENG",
+                "IRI",
+                "LON",
+                "LVP",
+                "YOR"
+            ]
+        },
+        {
+            "name": "Warsaw",
+            "abbreviation": "WAR",
+            "aliases": [],
+            "type": "Land",
+            "adjacencies": [
+                "GAL",
+                "LVN",
+                "MOS",
+                "PRU",
+                "SIL",
+                "UKR"
+            ]
+        },
+        {
+            "name": "Western Mediterranean Sea",
+            "abbreviation": "WES",
+            "aliases": [
+                "West Mediterranean",
+                "West Mediterranean Sea",
+                "Western Med",
+                "West Med",
+                "WMED",
+                "West",
+                "Western",
+                "WestMed",
+                "WMS",
+                "WME",
+                "WMD",
+                "West+Med",
+                "Wes+Med",
+                "western+Med"
+            ],
+            "type": "Sea",
+            "adjacencies": [
+                "MAO",
+                "LYO",
+                "NAF",
+                "SPA/SC",
+                "TUN",
+                "TYS"
+            ]
+        },
+        {
+            "name": "Yorkshire",
+            "abbreviation": "YOR",
+            "aliases": [
+                "York",
+                "Yonkers"
+            ],
+            "type": "Coast",
+            "adjacencies": [
+                "EDI",
+                "LON",
+                "LVP",
+                "NTH",
+                "WAL"
+            ]
+        }
+    ]
+}
