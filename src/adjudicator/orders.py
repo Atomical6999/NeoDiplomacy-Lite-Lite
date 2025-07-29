@@ -41,7 +41,7 @@ class Support(Order):
         self.supported_order: Order
     
     def __str__(self) -> str:
-        return super().__str__() + self.supported_order.__str__()
+        return super().__str__() + " S " +self.supported_order.__str__()
 
 class Convoy(Order):
     def __init__(self) -> None:
@@ -114,7 +114,8 @@ def parse_order_file(nd_map: Map, path: str) -> list[Order]:
 
             unit_str = line.split(" ")[0]
 
-            unit_location_str = line.split(unit_str)[1].strip().split(" ")[0].split("-")[0]
+            unit_location_str = line.split(" ")[1].split("-")[0]
+            # unit_location_str = line.split(unit_str)[1].strip().split(" ")[0].split("-")[0]
 
             if unit_str == "A" or "ARMY":
                 unit = OrderedArmy(Army(nd_map.search_province_by_name(unit_location_str)))
@@ -189,12 +190,52 @@ def parse_order_file(nd_map: Map, path: str) -> list[Order]:
     return orders
 
 def get_powers_for_test_case(nd_map: Map, path: str) -> list[Power]:
-    new_lines = []
+    for power in nd_map.powers:
+        power.units = []
+
+    powers: list[Power] = nd_map.powers
+
+    lines = []
 
     with open(path, "r") as file:
         lines = file.readlines()
 
-    
+    current_power: Optional[Power] = None
+    for line in lines:
+        line = line.strip().upper()
 
+        if line == "":
+            continue
 
-    return []
+        power_str = line.split(":")[0]
+        if power_str != line:
+            # Line contains colon
+            power = nd_map.search_power_by_name(power_str)
+
+            if power is not None:
+                current_power = power
+            continue
+        else:
+            unit: Unit
+
+            unit_str = line.split(" ")[0]
+
+            unit_location_str = line.split(unit_str)[1].strip().split(" ")[0].split("-")[0]
+
+            if unit_str == "A" or "ARMY":
+                unit = Army(nd_map.search_province_by_name(unit_location_str))
+            elif unit_str == "F" or "FLEET":
+                unit = Fleet(nd_map.search_province_by_name(unit_location_str))
+            else:
+                print("Invalid unit type " + unit_str)
+                continue
+
+            
+            for power in powers:
+                if power == current_power:
+                    power.units.append(unit)
+                    break
+
+    print(current_power)
+
+    return powers

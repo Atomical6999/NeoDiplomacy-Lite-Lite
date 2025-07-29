@@ -9,6 +9,7 @@ from core.classes.map import *
 from core.classes.units import *
 from core.parser.map_parser import *
 from adjudicator.orders import *
+from adjudicator import adjudicator
 
 PATH = r"D:\Users\Conor\Microsoft Visual Studio Code\Projects\python\NeoDiplomacy Lite Lite\maps"
 
@@ -435,12 +436,18 @@ def test_cases_menu() -> None:
             case 1:
                 pass
             case 2:
-                get_powers_for_test_case(nd_map, r"D:\Users\Conor\Microsoft Visual Studio Code\Projects\python\NeoDiplomacy Lite Lite\src\adjudicator\test_cases\test.order")
+                powers = get_powers_for_test_case(nd_map, r"D:\Users\Conor\Microsoft Visual Studio Code\Projects\python\NeoDiplomacy Lite Lite\src\adjudicator\test_cases\test.order")
+                nd_map.powers = powers
                 orders = parse_order_file(nd_map, r"D:\Users\Conor\Microsoft Visual Studio Code\Projects\python\NeoDiplomacy Lite Lite\src\adjudicator\test_cases\test.order")
 
                 for order in orders:
                     print(order)
                 input("ENTER TO OCNIN:")
+
+                # TODO - Validate orders
+
+                for order in orders:
+                    adjudicator.resolve(order)
 
 def main_menu() -> None:
     while True:
