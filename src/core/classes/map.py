@@ -50,7 +50,7 @@ class Province():
         self.adjacencies: list[Province] = []
 
         self.hold_strength: int = 0 # Strength to prevent a unit moving into this province. Empty = 0
-        self.occupied: bool = False
+        self.unit = None
 
     def __str__(self) -> str:
         adjacency_names = ""

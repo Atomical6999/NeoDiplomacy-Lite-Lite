@@ -5,6 +5,7 @@ class Unit(ABC):
 
     def __init__(self, location) -> None:
         self._location = location
+        self.order = None
 
     @property
     def location(self):

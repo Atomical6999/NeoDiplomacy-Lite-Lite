@@ -6,9 +6,9 @@ from core.classes.map import *
 from core.classes.units import Unit
 
 class Order:
-    def __init__(self) -> None:
+    def __init__(self, unit) -> None:
         self.power: Power
-        self.unit: OrderedUnit
+        self.unit: OrderedUnit = unit
 
         self.resolved = False
         self.resolution = False
@@ -24,31 +24,31 @@ class Order:
         return f"{self.get_unit_type()} {self.unit.location.abbreviation if self.unit.location is not None else ""}"
 
 class Hold(Order):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, unit) -> None:
+        super().__init__(unit)
 
 class Move(Order):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, unit) -> None:
+        super().__init__(unit)
         self.destination: Province
         self.path: bool
+        self.head_to_head: bool
 
     def __str__(self) -> str:
         return super().__str__() + f"-{self.destination.abbreviation}"
 
 class Support(Order):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, unit) -> None:
+        super().__init__(unit)
         self.supported_order: Order
     
     def __str__(self) -> str:
         return super().__str__() + " S " +self.supported_order.__str__()
 
 class Convoy(Order):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, unit) -> None:
+        super().__init__(unit)
         self.convoy: Move
-
 
 class OrderedUnit(Unit):
     def __init__(self, unit: Unit) -> None:
@@ -56,6 +56,7 @@ class OrderedUnit(Unit):
         self.attack_strength: int = 0 # Strength to attack and conquer province moved to
         self.defend_strength: int = 0 # Strength of unit engaged in a head-to-head to prevent the opposing unit from succeeding
         self.prevent_strength: int = 0 # Strength preventing another ordered unit to succeed moving to the same province
+        self.order: Optional["Order"] = None  # Reference to the order assigned to this unit
 
 class OrderedArmy(OrderedUnit):
     def __init__(self, unit: Unit) -> None:
@@ -70,10 +71,9 @@ def parse_move_order(line: str, nd_map: Map, current_power: Power, unit: Ordered
     destination_str = line.split("-")[-1].strip()
     destination = nd_map.search_province_by_name(destination_str)
 
-    order = Move()
+    order = Move(unit)
     if current_power is not None:
         order.power = current_power
-    order.unit = unit
     if destination is not None:
         order.destination = destination
     
@@ -139,47 +139,58 @@ def parse_order_file(nd_map: Map, path: str) -> list[Order]:
                     first_province = nd_map.search_province_by_name(first_prov_str.strip().split(" ")[-1].strip())
                     second_province = nd_map.search_province_by_name(second_prov_str.strip())
 
-                    order = Support()
+                    order = Support(unit)
                     if current_power is not None:
                         order.power = current_power
-                    order.unit = unit
 
-                    supported_order = Move()
+                    move_supported_order: Optional[Move] = None
                     if first_province is not None:
                         power_search = nd_map.get_unit_power_from_province(first_province)
-                        if power_search is not None:
-                            supported_order.power = power_search
                         unit_search = nd_map.get_unit_from_province(first_province)
                         if unit_search is not None:
                             if isinstance(unit_search, Army):
-                                supported_order.unit = OrderedArmy(unit_search)
+                                supported_order_unit = OrderedArmy(unit_search)
                             else:
-                                supported_order.unit = OrderedFleet(unit_search)
-                    if second_province is not None:
-                        supported_order.destination = second_province
+                                supported_order_unit = OrderedFleet(unit_search)
+                            
+                            if supported_order_unit is not None:
+                                move_supported_order = Move(supported_order_unit)
+                        
+                        if power_search is not None and move_supported_order is not None:
+                            move_supported_order.power = power_search
+                    if second_province is not None and move_supported_order is not None:
+                        move_supported_order.destination = second_province
                     
-                    order.supported_order = supported_order
+                    if move_supported_order is not None:
+                        order.supported_order = move_supported_order
 
                     if order is not None:
                         orders.append(order)
                 else:
                     # Else, hold support
-                    supported_order = Hold()
+                    supported_order: Optional[Hold] = None
 
                     province_str = next.strip().split(" ")[-1]
                     province = nd_map.search_province_by_name(province_str.strip())
 
                     if province is not None:
                         power_search = nd_map.get_unit_power_from_province(province)
-                        if power_search is not None:
-                            supported_order.power = power_search 
                     
                         unit_search = nd_map.get_unit_from_province(province)
                         if unit_search is not None:
                             if isinstance(unit_search, Army):
-                                supported_order.unit = OrderedArmy(unit_search)
+                                supported_order_unit = OrderedArmy(unit_search)
                             else:
-                                supported_order.unit = OrderedFleet(unit_search)
+                                supported_order_unit = OrderedFleet(unit_search)
+            
+                            if supported_order_unit is not None:
+                                supported_order = Hold(supported_order_unit)
+                        
+                        if power_search is not None and supported_order is not None:
+                            supported_order.power = power_search 
+
+        if order is not None:
+            order.unit.order = order
             
     return orders
 
