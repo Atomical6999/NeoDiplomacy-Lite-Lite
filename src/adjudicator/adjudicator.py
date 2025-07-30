@@ -18,9 +18,14 @@ def adjudicate(order: Order, optimistic: bool) -> bool:
         return False
 
 def adjudicate_move(order: Move, optimistic: bool) -> bool:
-    # TODO - Check for head-to-head
-    
-    return order.unit.attack_strength > order.destination.hold_strength and order.unit.attack_strength > prevent_strength
+    # Check if head-to-head
+    if order.unit is not None:
+        if order.destination.unit is not None and hasattr(order.destination.unit, "order") and isinstance(order.destination.unit.order, Move):
+            if order.destination == order.destination.unit.order.destination:
+                order.head_to_head = True
+
+    # return order.unit.attack_strength > order.destination.hold_strength and order.unit.attack_strength > prevent_strength
+    return False
 
 def adjudicate_support(order: Support, optimistic: bool) -> bool:
     # TODO: Implement support adjudication logic
@@ -45,7 +50,7 @@ def adjudicate_attack_strength(order: Order, optimistic: bool) -> int:
         adjudicate_path(order, optimistic)
         if not order.path:
             return 0
-        elif not order.destination.occupied or (head_to_head and )
+        elif not order.destination.unit is None or (order.head_to_head and order.destination.unit.order)
     return 0
 
 def adjudicate_hold_strength(order: Order, optimistic: bool) -> int:

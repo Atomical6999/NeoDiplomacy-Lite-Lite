@@ -446,7 +446,7 @@ def test_cases_menu() -> None:
 
                 # TODO - Validate orders
 
-                adjudicator.resolve_orders(orders)
+                # adjudicator.resolve_orders(orders)
 
 def main_menu() -> None:
     while True:
