@@ -49,6 +49,9 @@ class Province():
         self.adjacencies_str: list[str] = adjacencies
         self.adjacencies: list[Province] = []
 
+        self.hold_strength: int = 0 # Strength to prevent a unit moving into this province. Empty = 0
+        self.occupied: bool = False
+
     def __str__(self) -> str:
         adjacency_names = ""
         if self.adjacencies != []:
@@ -129,8 +132,6 @@ class Map():
                     adjacencies.append(adjacent_province)
             
             province.adjacencies = adjacencies
-
-    # def populate_test_case_units
 
     def __init__(self, name: str, description: str, version: str, author: str, starting_year: int, starting_season: str, seasons: list[str], powers: list[Power] = [], provinces: list[Province] = []) -> None:
         self.name: str = name

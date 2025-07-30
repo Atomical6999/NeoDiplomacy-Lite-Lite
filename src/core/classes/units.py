@@ -4,7 +4,17 @@ from abc import ABC, abstractmethod
 class Unit(ABC):
 
     def __init__(self, location) -> None:
-        self.location = location
+        self._location = location
+
+    @property
+    def location(self):
+        return self._location
+    
+    @location.setter
+    def location(self, loc):
+        self._location = loc
+        loc.occupied = True
+        # TODO: set occupied back to false at some point
 
 class Army(Unit):
 

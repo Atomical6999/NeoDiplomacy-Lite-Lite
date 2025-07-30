@@ -31,6 +31,7 @@ class Move(Order):
     def __init__(self) -> None:
         super().__init__()
         self.destination: Province
+        self.path: bool
 
     def __str__(self) -> str:
         return super().__str__() + f"-{self.destination.abbreviation}"
@@ -63,13 +64,6 @@ class OrderedArmy(OrderedUnit):
 class OrderedFleet(OrderedUnit):
     def __init__(self, unit: Unit) -> None:
         super().__init__(unit)
-
-class AdjudicatedProvince(Province):
-    def __init__(self, province: Province) -> None:
-        super().__init__(province.name, province.abbreviation, province.aliases, province.type, province.adjacencies_str)
-        self.adjacencies = province.adjacencies
-
-        self.hold_strength: int = 0 # Strength to prevent a unit moving into this province. Empty = 0
 
 
 def parse_move_order(line: str, nd_map: Map, current_power: Power, unit: OrderedUnit) -> Optional[Move]:
